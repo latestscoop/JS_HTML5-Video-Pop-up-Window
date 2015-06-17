@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>JS_Video-pop-ups</title>
+<script>
+<!--
+//Video
+            function header() {
+                OpenWindow = window.open("", "", "toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=yes, copyhistory=yes, titlebar=no, width=420, height=240");
+                OpenWindow.document.write("<html>")
+                OpenWindow.document.write("<head>")
+                OpenWindow.document.write("<meta name='viewport' content='width=device-width, initial-scale=1'>")
+				OpenWindow.document.write("<title>TP Congress 2014</title>")
+				OpenWindow.document.write("</head>")
+                OpenWindow.document.write("<body style=' background:black; padding:0px; margin:10px 0px;'>")
+                OpenWindow.document.write("<div style='display:block; width:400px; height:220px; margin-left:auto; margin-right:auto;'>")
+            }
+            function footer() {
+                OpenWindow.document.write("</div></body></html>")
+                OpenWindow.document.close()
+                self.name = "main"
+            }
+            var html5 = "";
+            function html5_video() {
+                OpenWindow.document.write("<video autoplay controls width='400' height='220'>")
+                OpenWindow.document.write("<source src='")
+                	OpenWindow.document.write(vidSource)
+					OpenWindow.document.write("' ")
+                OpenWindow.document.write("type='video/")
+					OpenWindow.document.write(vidType)
+					OpenWindow.document.write("'> ")
+                OpenWindow.document.write("Please use Chrome, Safari or IE.</video>")
+            }
+//Text
+			function headerTXT() {
+				OpenWindow = window.open("", "", "toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=yes, copyhistory=yes, titlebar=no, width=740, height=426");
+                OpenWindow.document.write("<html>")
+                OpenWindow.document.write("<head>")
+                OpenWindow.document.write("<title>Q&A</title>")
+                OpenWindow.document.write("<style>h2{font-size:larger;}</style>")
+				OpenWindow.document.write("</head>")
+                OpenWindow.document.write("<body style=' background:#ddd; color:#555; font-size:13px; padding:10px; margin:0;'>")
+			}
+			function footerTXT() {
+                OpenWindow.document.write("</body></html>")
+                OpenWindow.document.close()
+                self.name = "qa"
+            }
+            var qa ="Error no Text";
+            function bodyTXT() {
+            	 OpenWindow.document.write(txt)
+            }
+-->
+</script>
+</head>
+<body>
+<h1>JavaScript Video & Text Pop-up Windows</h1>
+<input onclick="open_2015_vid1()" type="button" value="Video One (mp4)" />
+<input onclick="open_2015_vid2()" type="button" value="Video Two (ogg)" />
+<input onclick="open_2015_txt1()" type="button" value="Text One" />
+<!--Place at end of document above closing body tag-->
+<script>
+	function open_2015_vid1() { 	    header(); 	    vidSource = "http://www.w3schools.com/html/mov_bbb.mp4";	vidType = "mp4";	    html5_video(); 	    footer(); 	}
+	function open_2015_vid2() { 	    header(); 	    VidSource = "http://www.w3schools.com/html/mov_bbb.ogg"; 	vidType = "ogg";	    html5_video(); 	    footer(); 	}
+	function open_2015_txt1() {
+		headerTXT();
+		txt = "<h2>Title - https://baconipsum.com/</h2>";
+		txt += "<p>Pork loin kielbasa pork alcatra. Turducken shoulder leberkas swine, jerky short loin ball tip sirloin pastrami fatback sausage short ribs. Doner prosciutto t-bone, rump jowl filet mignon brisket turducken tenderloin chicken landjaeger pork loin. Cow turkey porchetta, fatback filet mignon kielbasa swine ball tip turducken. Meatball ham hock sirloin, tongue fatback pig chicken spare ribs doner jerky ham. Jerky bresaola ball tip, alcatra corned beef biltong ham hock shank pork belly brisket strip steak fatback drumstick.</p>";
+		txt += "<p>Meatloaf frankfurter shoulder shank alcatra doner strip steak brisket pork short ribs. Swine pancetta pig, cupim ham hock venison pork loin shank ground round doner boudin. Shoulder short loin short ribs landjaeger, prosciutto strip steak corned beef pork loin beef ribs jerky. Andouille cow kevin pork loin, sausage capicola pancetta hamburger short ribs ham bacon tenderloin ribeye. Short ribs boudin bacon ham. Prosciutto beef tongue short ribs doner.</p>";
+		txt += "<p>T-bone ball tip chicken biltong swine chuck. Cow pancetta sirloin bacon shoulder bresaola capicola pork chop boudin tail pork loin short ribs drumstick kevin. Hamburger kevin pork chop chicken leberkas. Shankle strip steak turducken jowl pork. Venison beef shankle chicken, ground round jerky cow pork loin t-bone pork chop andouille porchetta. Venison jerky tenderloin, cupim pork chop tongue strip steak kevin flank. Meatloaf corned beef tenderloin shoulder turkey jerky fatback sirloin pork chop pork loin alcatra.</p>";
+		bodyTXT();
+		footerTXT();
+		}
+</script>
+</body>
+</html>
